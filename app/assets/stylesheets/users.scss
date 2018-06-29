@@ -1,0 +1,22 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.signUpText {
+  color: #ec9ba4;
+  font-family: 'Dosis', sans-serif;
+  text-shadow: 1px 2px lightgrey;
+}
+
+.formFieldBoxShadow:hover {
+      box-shadow: 1px 1px 3px lightgrey;
+}
+
+.formFieldBoxShadow:focus {
+  border-color: #efc5ca;
+}
+
+.mainUserContainer {
+  margin-top: 50px;
+}
