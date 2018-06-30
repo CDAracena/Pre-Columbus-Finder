@@ -15,3 +15,8 @@
 //= require jquery/dist/jquery
 //= require toastr/build/toastr.min.js
 //= require_tree .
+
+$(document).ready(function() {
+
+
+})
