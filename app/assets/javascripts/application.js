@@ -29,10 +29,12 @@ $(document).ready(function() {
 
   axios.get('http://api.thewalters.org/v1/objects?apikey=' + window.API_KEY)
     .then(function(response) {
-
+      console.log(response)
       for (let i = 0; i < 3; i++) {
         let firstItems = new Artifact(response.data.Items[i])
         document.querySelectorAll('.cardMainImg')[i].src = firstItems.img
+        document.querySelectorAll('.artifactName')[i].innerText = firstItems.name
+        document.querySelectorAll('.artifactDescription')[i].innerText = firstItems.description
       }
     })
 

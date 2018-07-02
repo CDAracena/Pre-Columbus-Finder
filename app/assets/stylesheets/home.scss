@@ -56,12 +56,28 @@ a.menuOptions:hover {
 
 .cardMainImg {
   width: 300px;
+  cursor: pointer;
 }
 
 .cardMainImg:hover {
-  box-shadow: 1px 1px 20px 9px darkgrey;
+  box-shadow: 3px 1px 10px darkgrey;
+    padding: 1px;
 }
 
 .randomArtifactColumn {
-  box-shadow: 1px 2px 3px lightgrey;
+  box-shadow: 1px 1px 5px darkgrey;
+}
+
+
+.randomArtifactRow {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly !important;
+}
+
+.artifactName {
+  color: #f5f4f6;
+background-color: #ea5359;
+border-radius: 3px;
+font-family: 'Dosis',sans-serif;
 }
