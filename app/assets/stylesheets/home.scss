@@ -1,3 +1,83 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sideMenuContainer {
+  background-color: #ea5359;
+  width: 150px;
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: 1px 2px 3px darkgrey;
+  height: 75%;
+  font-family: 'Teko', sans-serif;
+  position: absolute;
+}
+
+a.menuOptions {
+  color: #f4f1f4;
+}
+
+a.menuOptions:hover {
+  color: #ea4a4c;
+}
+
+.listmenuOptions {
+  padding-bottom: 50px;
+}
+
+.menuLabelText {
+  color: #f5f4f6 !important;
+  font-size: 30px;
+  border-bottom: 1px solid #f5f4f6;
+}
+
+.homeMainContainer {
+  margin-left: 200px;
+}
+
+.homeHeaderText {
+  margin-top: 25px;
+  border-radius: 4px;
+  box-shadow: 0 4px 5px darkgrey;
+  background-color: #ea5359;
+  color: #f5f4f6;
+  border: 1px solid #ea9099;
+  box-sizing: border-box;
+}
+
+.displaySection {
+  text-shadow: 1px 1px 2px indianred;
+  font-family: 'teko', sans-serif;
+}
+
+.ArtifactContainer:hover {
+  box-shadow: 1px 3px 30px darkgrey;
+}
+
+.cardMainImg {
+  width: 300px;
+  cursor: pointer;
+}
+
+.cardMainImg:hover {
+  box-shadow: 3px 1px 10px darkgrey;
+    padding: 1px;
+}
+
+.randomArtifactColumn {
+  box-shadow: 1px 1px 5px darkgrey;
+}
+
+
+.randomArtifactRow {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly !important;
+}
+
+.artifactName {
+  color: #f5f4f6;
+background-color: #ea5359;
+border-radius: 3px;
+font-family: 'Dosis',sans-serif;
+}

@@ -19,9 +19,9 @@
         <% end %>
       </div>
       <% if user_signed_in? %>
-      <div class="navbar-item">
-        <%= link_to "My Profile", users_path, class:'userSessionLinks' %>
-      </div>
+        <div class="navbar-item">
+          <%= link_to "My Profile", users_path, class:'userSessionLinks' %>
+        </div>
         <div class="navbar-item">
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:'userSessionLinks' %>
         </div>
@@ -42,6 +42,8 @@
       </button>
     </div>
   </nav>
+
   <%= yield %>
+
 </body>
 </html>
