@@ -2,9 +2,39 @@
 # yarn lockfile v1
 
 
+axios-on-rails@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/axios-on-rails/-/axios-on-rails-0.0.1.tgz#3964f774cbb278158bff104de8fa1b2583b27201"
+  dependencies:
+    axios "^0.17.1"
+    rails-ujs "^5.1.4"
+
+axios@^0.17.1:
+  version "0.17.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.17.1.tgz#2d8e3e5d0bdbd7327f91bc814f5c57660f81824d"
+  dependencies:
+    follow-redirects "^1.2.5"
+    is-buffer "^1.1.5"
+
 bulma-start@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/bulma-start/-/bulma-start-0.0.2.tgz#472507881b1b27af29e009c8599503e1462d2031"
+
+debug@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  dependencies:
+    ms "2.0.0"
+
+follow-redirects@^1.2.5:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.0.tgz#234f49cf770b7f35b40e790f636ceba0c3a0ab77"
+  dependencies:
+    debug "^3.1.0"
+
+is-buffer@^1.1.5:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
 
 jQuery@^1.7.4:
   version "1.7.4"
@@ -13,6 +43,14 @@ jQuery@^1.7.4:
 jquery@>=1.12.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+
+ms@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+
+rails-ujs@^5.1.4:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/rails-ujs/-/rails-ujs-5.2.0.tgz#d93f7a969a226c0ae67044172955be8c1cdf49fc"
 
 toastr@^2.1.4:
   version "2.1.4"

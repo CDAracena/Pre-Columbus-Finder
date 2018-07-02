@@ -2,6 +2,7 @@
   "name": "pre_columbus_finder",
   "private": true,
   "dependencies": {
+    "axios-on-rails": "^0.0.1",
     "bulma-start": "^0.0.2",
     "jQuery": "^1.7.4",
     "toastr": "^2.1.4"

@@ -14,9 +14,26 @@
 //= require bulma-start/_javascript/main.js
 //= require jquery/dist/jquery
 //= require toastr/build/toastr.min.js
+//= require axios/dist/axios
 //= require_tree .
 
 $(document).ready(function() {
 
+  class Artifact {
+    constructor(response) {
+      this.name = response.ObjectName;
+      this.description = response.Dynasty;
+      this.img = response.PrimaryImage.Raw
+    }
+  }
+
+  axios.get('http://api.thewalters.org/v1/objects?apikey=' + window.API_KEY)
+    .then(function(response) {
+
+      for (let i = 0; i < 3; i++) {
+        let firstItems = new Artifact(response.data.Items[i])
+        document.querySelectorAll('.cardMainImg')[i].src = firstItems.img
+      }
+    })
 
 })

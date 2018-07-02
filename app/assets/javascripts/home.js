@@ -5,7 +5,6 @@ $(document).ready(function() {
 
   let regionSelectionText = document.querySelector('.menuLabelText');
   let regionsText = document.querySelectorAll('.menuOptions');
-  console.log(regionsText)
   regionSelectionText.addEventListener('mouseover', function() {
     regionSelectionText.innerText = "Select";
   })
@@ -14,8 +13,11 @@ $(document).ready(function() {
   })
 
   for (let i = 0; regionsText.length; i++) {
+
     regionsText[i].addEventListener('click', function() {
       document.querySelector('.displaySection').innerText = regionsText[i].textContent
+
     })
-  }
+  };
+
 })

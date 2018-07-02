@@ -1,18 +1,37 @@
-
 <aside class="menu sideMenuContainer">
   <p class="menu-label menuLabelText has-text-centered">
     Regions
   </p>
   <ul class="menu-list">
-    <li class ="listmenuOptions"> <a class="menuOptions is-size-4 has-text-centered">The Caribbean</a> </li>
-    <li class = "listmenuOptions"> <a class="menuOptions is-size-4 has-text-centered">Central America</a> </li>
-    <li class = "listmenuOptions"> <a class="menuOptions is-size-4 has-text-centered">South America</a> </li>
-    <li class = "listmenuOptions"> <a class="menuOptions is-size-4 has-text-centered">All</a> </li>
-</aside>
-<div class="container  homeMainContainer">
-<div class="columns">
-  <div class="column">
-    You Are Currently Viewing: <span class="displaySection"> This </span>
-  </div>
-</div>
-</div>
+    <li class="listmenuOptions">
+      <a class="menuOptions is-size-4 has-text-centered">The Caribbean</a>
+    </li>
+    <li class="listmenuOptions">
+      <a class="menuOptions is-size-4 has-text-centered">Central America</a>
+    </li>
+    <li class="listmenuOptions">
+      <a class="menuOptions is-size-4 has-text-centered">South America</a>
+    </li>
+    <li class="listmenuOptions">
+      <a class="menuOptions is-size-4 has-text-centered">All</a>
+    </li>
+  </aside>
+  <div class="container  homeMainContainer">
+    <div class="columns">
+      <div class="column has-text-centered is-size-2 homeHeaderText">
+        <span class="displaySection is-size-2">
+          Latin America
+        </span>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-one-quarter randomArtifactColumn">
+        <img src="" class="cardMainImg">
+      </div>
+      <div class="column is-centered is-one-quarter randomArtifactColumn">
+        <img src="" class="cardMainImg">
+      </div>
+    </div>
+    <script type="text/javascript">
+      window.API_KEY = '<%= ENV['WALTERS_SECRET_KEY'] %>'
+    </script>
