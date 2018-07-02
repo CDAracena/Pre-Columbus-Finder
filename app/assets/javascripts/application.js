@@ -22,19 +22,29 @@ $(document).ready(function() {
   class Artifact {
     constructor(response) {
       this.name = response.ObjectName;
-      this.description = response.Dynasty;
+      this.description = response.Description;
       this.img = response.PrimaryImage.Raw
+      this.culture = response.Culture;
+      this.timePeriod = response.DateText
     }
   }
 
-  axios.get('http://api.thewalters.org/v1/objects?apikey=' + window.API_KEY)
+
+
+  axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
     .then(function(response) {
       console.log(response)
-      for (let i = 0; i < 3; i++) {
-        let firstItems = new Artifact(response.data.Items[i])
-        document.querySelectorAll('.cardMainImg')[i].src = firstItems.img
-        document.querySelectorAll('.artifactName')[i].innerText = firstItems.name
-        document.querySelectorAll('.artifactDescription')[i].innerText = firstItems.description
+
+      let cardImages = document.querySelectorAll('.cardMainImg');
+      let artifacttNames = document.querySelectorAll('.artifactName');
+      let descriptions = document.querySelectorAll('.artifactDescription');
+
+      for (let i = 0; i < cardImages.length; i++) {
+        let randomArtifact = Math.floor(Math.random() * response.data.Items.length)
+        let firstItems = new Artifact(response.data.Items[randomArtifact])
+        cardImages[i].src = firstItems.img
+        artifacttNames[i].innerText = firstItems.name
+        descriptions[i].innerText = "Culture: " + firstItems.culture + ", " + "Date: " + firstItems.timePeriod
       }
     })
 
