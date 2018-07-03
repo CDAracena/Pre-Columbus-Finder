@@ -29,8 +29,7 @@ $(document).ready(function() {
     }
   }
 
-
-
+  // Random image loader, loads up random images of central america array //
   axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
     .then(function(response) {
       console.log(response)
@@ -47,5 +46,85 @@ $(document).ready(function() {
         descriptions[i].innerText = "Culture: " + firstItems.culture + ", " + "Date: " + firstItems.timePeriod
       }
     })
+
+  let regionSelectionText = document.querySelector('.menuLabelText');
+  let regionsText = document.querySelectorAll('.menuOptions');
+  regionSelectionText.addEventListener('mouseover', function() {
+    regionSelectionText.innerText = "Select";
+  })
+  regionSelectionText.addEventListener('mouseout', function() {
+    regionSelectionText.innerText = "Regions";
+  })
+
+  //Loops for menu options. First one is central america //
+
+  for (let i = 0; i < regionsText.length; i++) {
+
+    regionsText[i].addEventListener('click', function() {
+      document.querySelector('.displaySection').innerText = regionsText[i].textContent
+      if (regionsText[i].textContent === "Central America") {
+        axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
+          .then(function(response) {
+            let cardImages = document.querySelectorAll('.cardMainImg');
+            let artifacttNames = document.querySelectorAll('.artifactName');
+            let descriptions = document.querySelectorAll('.artifactDescription');
+
+            for (let j = 0; j < cardImages.length; j++) {
+              let artifacts = new Artifact(response.data.Items[j])
+              cardImages[j].src = artifacts.img
+              artifacttNames[j].innerText = artifacts.name
+              descriptions[j].innerText = "Culture: " + artifacts.culture + ", " + "Date: " + artifacts.timePeriod
+            }
+          })
+      }
+    })
+  };
+
+  // For the Caribbean
+  for (let i = 0; i < regionsText.length; i++) {
+
+    regionsText[i].addEventListener('click', function() {
+      document.querySelector('.displaySection').innerText = regionsText[i].textContent
+      if (regionsText[i].textContent === "The Caribbean") {
+        axios.get('http://api.thewalters.org/v1/geographies/607987/objects?apikey=' + window.API_KEY)
+          .then(function(response) {
+            let cardImages = document.querySelectorAll('.cardMainImg');
+            let artifacttNames = document.querySelectorAll('.artifactName');
+            let descriptions = document.querySelectorAll('.artifactDescription');
+
+            for (let j = 0; j < cardImages.length; j++) {
+              let artifacts = new Artifact(response.data.Items[j])
+              cardImages[j].src = artifacts.img
+              artifacttNames[j].innerText = artifacts.name
+              descriptions[j].innerText = "Culture: " + artifacts.culture + ", " + "Date: " + artifacts.timePeriod
+            }
+          })
+      }
+    })
+  }
+
+  // For South America //
+
+  for (let i = 0; i < regionsText.length; i++) {
+
+    regionsText[i].addEventListener('click', function() {
+      document.querySelector('.displaySection').innerText = regionsText[i].textContent
+      if (regionsText[i].textContent === "South America") {
+        axios.get('http://api.thewalters.org/v1/geographies/1415776/objects?apikey=' + window.API_KEY)
+          .then(function(response) {
+            let cardImages = document.querySelectorAll('.cardMainImg');
+            let artifacttNames = document.querySelectorAll('.artifactName');
+            let descriptions = document.querySelectorAll('.artifactDescription');
+
+            for (let j = 0; j < cardImages.length; j++) {
+              let artifacts = new Artifact(response.data.Items[j])
+              cardImages[j].src = artifacts.img
+              artifacttNames[j].innerText = artifacts.name
+              descriptions[j].innerText = "Culture: " + artifacts.culture + ", " + "Date: " + artifacts.timePeriod
+            }
+          })
+      }
+    })
+  }
 
 })
