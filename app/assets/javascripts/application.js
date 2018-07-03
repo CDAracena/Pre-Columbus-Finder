@@ -62,18 +62,44 @@ $(document).ready(function() {
 
     regionsText[i].addEventListener('click', function() {
       document.querySelector('.displaySection').innerText = regionsText[i].textContent
+
       if (regionsText[i].textContent === "Central America") {
         axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
           .then(function(response) {
             let cardImages = document.querySelectorAll('.cardMainImg');
             let artifacttNames = document.querySelectorAll('.artifactName');
             let descriptions = document.querySelectorAll('.artifactDescription');
+            //////////
+            let secondArtifactRow = document.querySelector('.secondRow');
+            let mainCardDiv = document.createElement("DIV");
+            let artifactnameRow = document.createElement("DIV")
+            let artifactNameDiv = document.createElement("DIV");
+            let artifactImgTag = document.createElement("IMG");
+            let descriptionRow = document.createElement("DIV");
+            let artifactDescriptionColumn = document.createElement("DIV")
 
             for (let j = 0; j < cardImages.length; j++) {
               let artifacts = new Artifact(response.data.Items[j])
+              if (cardImages.length < 6) {
+                secondArtifactRow.appendChild(mainCardDiv);
+                mainCardDiv.appendChild(artifactnameRow);
+                artifactnameRow.appendChild(artifactNameDiv);
+                mainCardDiv.appendChild(artifactImgTag);
+                mainCardDiv.appendChild(descriptionRow);
+                descriptionRow.appendChild(artifactDescriptionColumn)
+
+                mainCardDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn');
+                artifactnameRow.classList.add('columns', 'has-text-centered')
+                artifactNameDiv.classList.add('column', 'artifactName');
+                artifactImgTag.classList.add('cardMainImg');
+                descriptionRow.classList.add('columns', 'randomArtifactDescription');
+                artifactDescriptionColumn.classList.add('column', 'artifactDescription')
+              }
+
               cardImages[j].src = artifacts.img
               artifacttNames[j].innerText = artifacts.name
               descriptions[j].innerText = "Culture: " + artifacts.culture + ", " + "Date: " + artifacts.timePeriod
+
             }
           })
       }
@@ -115,9 +141,33 @@ $(document).ready(function() {
             let cardImages = document.querySelectorAll('.cardMainImg');
             let artifacttNames = document.querySelectorAll('.artifactName');
             let descriptions = document.querySelectorAll('.artifactDescription');
+            //////////
+            let secondArtifactRow = document.querySelector('.secondRow');
+            let mainCardDiv = document.createElement("DIV");
+            let artifactnameRow = document.createElement("DIV")
+            let artifactNameDiv = document.createElement("DIV");
+            let artifactImgTag = document.createElement("IMG");
+            let descriptionRow = document.createElement("DIV");
+            let artifactDescriptionColumn = document.createElement("DIV")
 
             for (let j = 0; j < cardImages.length; j++) {
               let artifacts = new Artifact(response.data.Items[j])
+              if (cardImages.length < 6) {
+                secondArtifactRow.appendChild(mainCardDiv);
+                mainCardDiv.appendChild(artifactnameRow);
+                artifactnameRow.appendChild(artifactNameDiv);
+                mainCardDiv.appendChild(artifactImgTag);
+                mainCardDiv.appendChild(descriptionRow);
+                descriptionRow.appendChild(artifactDescriptionColumn)
+
+                mainCardDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn');
+                artifactnameRow.classList.add('columns', 'has-text-centered')
+                artifactNameDiv.classList.add('column', 'artifactName');
+                artifactImgTag.classList.add('cardMainImg');
+                descriptionRow.classList.add('columns', 'randomArtifactDescription');
+                artifactDescriptionColumn.classList.add('column', 'artifactDescription')
+              }
+
               cardImages[j].src = artifacts.img
               artifacttNames[j].innerText = artifacts.name
               descriptions[j].innerText = "Culture: " + artifacts.culture + ", " + "Date: " + artifacts.timePeriod
