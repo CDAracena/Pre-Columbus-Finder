@@ -13,10 +13,10 @@
       <a class="menuOptions is-size-4 has-text-centered">South America</a>
     </li>
     <li class="listmenuOptions">
-      <a class="menuOptions is-size-4 has-text-centered">All</a>
+      <a class="menuOptions is-size-4 has-text-centered" href="/">Random</a>
     </li>
   </aside>
-  <div class="container homeMainContainer">
+  <div class="container-fluid homeMainContainer">
     <div class="columns">
       <div class="column has-text-centered is-size-2 homeHeaderText">
         <span class="displaySection is-size-2">
@@ -24,7 +24,7 @@
         </span>
       </div>
     </div>
-    <div class="columns is-centered has-text-centered randomArtifactRow">
+    <div class="columns is-multiline is-centered has-text-centered randomArtifactRow">
       <div class="column is-one-quarter randomArtifactColumn">
         <div class="columns has-text-centered">
           <div class="column artifactName">
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="column is-centered is-one-quarter randomArtifactColumn">
+      <div class="column is-one-quarter randomArtifactColumn">
         <div class="columns has-text-centered">
           <div class="column artifactName">
             Artifact
@@ -51,7 +51,7 @@
           </div>
         </div>
       </div>
-      <div class="column is-centered is-one-quarter randomArtifactColumn">
+      <div class="column is-one-quarter randomArtifactColumn">
         <div class="columns has-text-centered">
           <div class="column artifactName">
             Artifact
@@ -65,8 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="columns is-centered has-text-centered randomArtifactRow secondRow">
-    </div>
+
     <script type="text/javascript">
       window.API_KEY = '<%= ENV['WALTERS_SECRET_KEY'] %>'
     </script>
