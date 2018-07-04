@@ -19,6 +19,7 @@
 
 $(document).ready(function() {
 
+
   class Artifact {
     constructor(response) {
       this.name = response.ObjectName;
@@ -28,11 +29,9 @@ $(document).ready(function() {
       this.timePeriod = response.DateText
     }
   }
-
   // Random image loader, loads up random images of central america array //
   axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
     .then(function(response) {
-      console.log(response)
 
       let cardImages = document.querySelectorAll('.cardMainImg');
       let artifacttNames = document.querySelectorAll('.artifactName');
@@ -130,13 +129,75 @@ $(document).ready(function() {
   `
   }
 
+  let countries = [{
+      name: 'Mexico',
+      geoId: 609486,
+
+    }, {
+      name: 'Guatemala',
+      geoId: 608307,
+    }, {
+      name: 'Nicaragua',
+      geoId: 611842,
+    },
+    {
+      name: 'Costa Rica',
+      geoId: 609720,
+    }, {
+      name: 'Belize',
+      geoId: 607731,
+    }, {
+      name: 'Panama',
+      geoId: 1413064,
+    }, {
+      name: 'Honduras',
+      geoId: 608506,
+    }, {
+      name: 'Colombia',
+      geoId: 1414585,
+
+    }, {
+      name: 'Peru',
+      geoId: 630620,
+    }, {
+      name: 'Puerto Rico',
+      geoId: 606033,
+    }, {
+      name: 'Dominican Republic',
+      geoId: 607987,
+    }, {
+      name: 'Hispaniola',
+      geoId: 606663,
+    }, {
+      name: 'Ecuador',
+      geoId: 1415238,
+    }
+  ];
 
 
-  // For South America //
+  let searchBar = document.querySelector('.searchBarField');
+  let searchBarButton = document.querySelector('.searchButton')
+  searchBarButton.addEventListener('click', function() {
 
-
-
-
+    for (let i = 0; i < countries.length; i++) {
+      countries[i].name = countries[i].name.toLowerCase();
+      if (countries[i].name === searchBar.value.toLowerCase()) {
+        axios.get('http://api.thewalters.org/v1/geographies/' + countries[i].geoId + '/objects?apikey=' + window.API_KEY)
+          .then(function(response) {
+            let mainContainer = document.querySelector('.randomArtifactRow');
+            mainContainer.innerHTML = '';
+            for (let j = 0; j < response.data.Items.length; ++j) {
+              let artifactContainerDiv = document.createElement('div');
+              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn');
+              let artifact = new Artifact(response.data.Items[j])
+              artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
+              mainContainer.appendChild(artifactContainerDiv)
+            }
+          })
+        document.querySelector('.displaySection').innerText = "We found the following for " + searchBar.value + ':'
+      }
+    }
+  })
 
 
 
