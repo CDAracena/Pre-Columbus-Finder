@@ -20,3 +20,41 @@
 .mainUserContainer {
   margin-top: 50px;
 }
+
+.userProfileMainContainer {
+  font-family: 'Dosis', sans-serif;
+  margin-top: 50px;
+}
+
+.heroBanner {
+  background: linear-gradient(141deg, #eebbc1 0%, #e9707a 71%, #ff5257 100%) !important;
+  box-shadow: 1px 2px darkgrey;
+  color: #f4f0f3;
+  border-radius: 5px;
+}
+.userInfoRow {
+  align-items: center;
+  height: 200px;
+}
+
+.updateLink  {
+  margin: auto;
+  color: #444444;
+  font-size:25px;
+
+}
+.updateLink:hover{
+  color:#f4f0f3;
+  animation: 1s increaseFontSize;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes increaseFontSize{
+  0%{
+    font-size: 26px;
+  }
+  100% {
+    font-size: 30px;
+  }
+}
