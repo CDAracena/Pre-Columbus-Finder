@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .signUpText {
   color: #ec9ba4;
   font-family: 'Dosis', sans-serif;
@@ -10,7 +9,7 @@
 }
 
 .formFieldBoxShadow:hover {
-      box-shadow: 1px 1px 3px lightgrey;
+  box-shadow: 1px 1px 3px lightgrey;
 }
 
 .formFieldBoxShadow:focus {
@@ -32,28 +31,28 @@
   color: #f4f0f3;
   border-radius: 5px;
 }
+
 .userInfoRow {
   align-items: center;
-  height: 200px;
+  height: 140px;
 }
 
-.updateLink  {
+.updateLink {
   margin: auto;
   color: #444444;
-  font-size:25px;
-
+  font-size: 25px;
 }
-.updateLink:hover{
-  color:#f4f0f3;
+
+.updateLink:hover {
+  color: #f4f0f3;
   animation: 1s increaseFontSize;
   animation-fill-mode: forwards;
-
 }
-
-@keyframes increaseFontSize{
-  0%{
+@keyframes increaseFontSize {
+  0% {
     font-size: 26px;
   }
+
   100% {
     font-size: 30px;
   }

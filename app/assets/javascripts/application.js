@@ -27,11 +27,14 @@ $(document).ready(function() {
       this.img = response.PrimaryImage.Raw
       this.culture = response.Culture;
       this.timePeriod = response.DateText
+      this.objectId = response.ObjectID
+
     }
   }
   // Random image loader, loads up random images of central america array //
   axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
     .then(function(response) {
+      console.log(response)
 
       let cardImages = document.querySelectorAll('.cardMainImg');
       let artifacttNames = document.querySelectorAll('.artifactName');
@@ -74,10 +77,24 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let starDefault = document.querySelectorAll('.stardefault');
+              starDefault[j].addEventListener('click', function() {
+                starDefault[j].src = 'starLiked.png';
+                axios.post('/user_favorites', {
+                  artifact: {
+                    object_id: artifact.objectId,
+                    name: artifact.name,
+                    description: artifact.description,
+                  }
+                })
+                starDefault[j].addEventListener('dblclick', function() {
+                  starDefault[j].src = 'unfavorite.png';
+                })
+              })
             }
-
-
           })
+
+
       } else if (regionsText[i].textContent === "The Caribbean") {
         axios.get('http://api.thewalters.org/v1/geographies/607987/objects?apikey=' + window.API_KEY)
           .then(function(response) {
@@ -89,8 +106,21 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let starDefault = document.querySelectorAll('.stardefault');
+              starDefault[j].addEventListener('click', function() {
+                starDefault[j].src = 'starLiked.png';
+                axios.post('/user_favorites', {
+                  artifact: {
+                    object_id: artifact.objectId,
+                    name: artifact.name,
+                    description: artifact.description,
+                  }
+                })
+                starDefault[j].addEventListener('dblclick', function() {
+                  starDefault[j].src = 'unfavorite.png';
+                })
+              })
             }
-
           })
       } else if (regionsText[i].textContent === "South America") {
         axios.get('http://api.thewalters.org/v1/geographies/1415776/objects?apikey=' + window.API_KEY)
@@ -103,6 +133,21 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let starDefault = document.querySelectorAll('.stardefault');
+              starDefault[j].addEventListener('click', function() {
+                starDefault[j].src = 'starLiked.png';
+                axios.post('/user_favorites', {
+                  artifact: {
+                    object_id: artifact.objectId,
+                    name: artifact.name,
+                    description: artifact.description,
+                  }
+                })
+              })
+
+              starDefault[j].addEventListener('dblclick', function() {
+                starDefault[j].src = 'unfavorite.png';
+              })
             }
 
 
@@ -124,6 +169,13 @@ $(document).ready(function() {
       <div class="columns randomArtifactDescription">
         <div class="column artifactDescription">
           ${"Culture: " + artifact.culture + ", " + "Date: " + artifact.timePeriod}
+        </div>
+      </div>
+      <div class="columns starSystemRow">
+        <div class="column is-one-quarter has-text-left">
+        <figure class="image is-32x32">
+          <img src="unfavorite.png" class="stardefault">
+          </figure>
         </div>
       </div>
   `
@@ -192,12 +244,28 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let starDefault = document.querySelectorAll('.stardefault');
+              starDefault[j].addEventListener('click', function() {
+                starDefault[j].src = 'starLiked.png';
+                axios.post('/user_favorites', {
+                  artifact: {
+                    object_id: artifact.objectId,
+                    name: artifact.name,
+                    description: artifact.description,
+                  }
+                })
+              })
+              starDefault[j].addEventListener('dblclick', function() {
+                starDefault[j].src = 'unfavorite.png';
+              })
             }
           })
         document.querySelector('.displaySection').innerText = "We found the following for " + searchBar.value + ':'
       }
     }
   })
+
+
 
 
 

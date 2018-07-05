@@ -16,14 +16,25 @@
     </div>
 
     <div class="column is-one-quarter userFirstName">
-      <h1 class="is-size-4">First Name: <%=@user.f_name%> </h1>
+      <h1 class="is-size-4">First Name:
+        <%=@user.f_name%>
+      </h1>
     </div>
     <div class="column is-one-quarter userLastName">
-      <h1 class="is-size-4">Last Name: <%=@user.l_name %> </h1>
+      <h1 class="is-size-4">Last Name:
+        <%=@user.l_name %>
+      </h1>
     </div>
     <div class="column is-one-quarter userEmail">
-      <h1 class="is-size-4">E-Mail: <%= @user.email %> </h1>
+      <h1 class="is-size-4">E-Mail:
+        <%= @user.email %>
+      </h1>
     </div>
-  <%=link_to 'Update Information', edit_user_path(@user), class:'updateLink'%>
-</div>
+    <%=link_to 'Update Information', edit_user_path(@user), class:'updateLink'%>
+  </div>
+  <div class="hero heroBanner">
+    <div class="hero-body">
+        <h1 class="has-text-centered is-size-2">My Favorites! </h1>
+    </div>
+  </div>
 </div>
