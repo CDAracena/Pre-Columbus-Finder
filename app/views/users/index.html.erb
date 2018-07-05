@@ -1,3 +1,29 @@
-<h1> Testing </h1>
-Hello:
-<%= @user.user_name %>
+<div class="container userProfileMainContainer">
+  <div class="hero is-danger is-bold heroBanner">
+    <div class="hero-body">
+      <div class="column">
+        <h1 class="has-text-centered is-size-2">
+          Welcome To Your Profile
+          <%= @user.user_name %>!
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-multiline userInfoRow heroBanner has-text-centered">
+    <div class="column is-one-quarter userUserName">
+      <h1 class="is-size-4">Username:
+        <%= @user.user_name %></h1>
+    </div>
+
+    <div class="column is-one-quarter userFirstName">
+      <h1 class="is-size-4">First Name: <%=@user.f_name%> </h1>
+    </div>
+    <div class="column is-one-quarter userLastName">
+      <h1 class="is-size-4">Last Name: <%=@user.l_name %> </h1>
+    </div>
+    <div class="column is-one-quarter userEmail">
+      <h1 class="is-size-4">E-Mail: <%= @user.email %> </h1>
+    </div>
+  <%=link_to 'Update Information', edit_user_path(@user), class:'updateLink'%>
+</div>
+</div>
