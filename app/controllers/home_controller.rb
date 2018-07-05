@@ -4,4 +4,5 @@ class HomeController < ApplicationController
 
     @artifact = Artifact.all
   end
+  
 end
