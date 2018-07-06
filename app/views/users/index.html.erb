@@ -34,7 +34,25 @@
   </div>
   <div class="hero heroBanner">
     <div class="hero-body">
-        <h1 class="has-text-centered is-size-2">My Favorites! </h1>
+      <h1 class="has-text-centered is-size-2">My Favorites!
+      </h1>
     </div>
   </div>
-</div>
+  <% @user_favorites.each do |favorite| %>
+    <div class="columns userInfoRow heroBanner has-text-centered">
+      <div class="column is-one-quarter favoriteImg favoriteColumn">
+        <figure class="image is-128x128">
+          <%= image_tag favorite.artifact.image, :style => 'height:120px', class: "favoriteImgSrc" %>
+        </figure>
+        </div>
+        <div class="column is-one-quater favoriteDescription favoriteColumn has-text-left">
+          <%= favorite.artifact.description %>
+        </div>
+        <div class="column is-one-quarter favoriteName favoriteColumn has-text-left">
+          <%= favorite.artifact.name %>
+        </div>
+      </div>
+
+
+  <% end %>
+      </div>
