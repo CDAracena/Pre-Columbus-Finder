@@ -29,12 +29,12 @@ $(document).ready(function() {
       this.timePeriod = response.DateText
       this.objectId = response.ObjectID
 
-    }
+    }.src = 'unfavorite.png'
+    axios.delete(`/user_favorites/${artifact.objectId}`)
   }
   // Random image loader, loads up random images of central america array //
   axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
     .then(function(response) {
-      console.log(response)
 
       let cardImages = document.querySelectorAll('.cardMainImg');
       let artifacttNames = document.querySelectorAll('.artifactName');
@@ -78,18 +78,25 @@ $(document).ready(function() {
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
               let starDefault = document.querySelectorAll('.stardefault');
+              let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
-                starDefault[j].src = 'starLiked.png';
-                axios.post('/user_favorites', {
-                  artifact: {
-                    object_id: artifact.objectId,
-                    name: artifact.name,
-                    description: artifact.description,
-                  }
-                })
-                starDefault[j].addEventListener('dblclick', function() {
+                if (starStatus === "default") {
+                  starStatus = "favorite"
+                  starDefault[j].src = 'starLiked.png';
+                  axios.post('/user_favorites', {
+                    artifact: {
+                      object_id: artifact.objectId,
+                      name: artifact.name,
+                      description: artifact.description,
+                      image: artifact.img
+                    }
+                  })
+                } else {
                   starDefault[j].src = 'unfavorite.png';
-                })
+                  starStatus = "default"
+                  axios.delete(`/user_favorites/${artifact.objectId}`)
+                }
+
               })
             }
           })
@@ -107,18 +114,25 @@ $(document).ready(function() {
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
               let starDefault = document.querySelectorAll('.stardefault');
+              let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
-                starDefault[j].src = 'starLiked.png';
-                axios.post('/user_favorites', {
-                  artifact: {
-                    object_id: artifact.objectId,
-                    name: artifact.name,
-                    description: artifact.description,
-                  }
-                })
-                starDefault[j].addEventListener('dblclick', function() {
+                if (starStatus === "default") {
+                  starStatus = "favorited"
+                  starDefault[j].src = 'starLiked.png';
+                  axios.post('/user_favorites', {
+                    artifact: {
+                      object_id: artifact.objectId,
+                      name: artifact.name,
+                      description: artifact.description,
+                      image: artifact.img
+                    }
+                  })
+                } else {
                   starDefault[j].src = 'unfavorite.png';
-                })
+                  starStatus = "default"
+                  axios.delete(`/user_favorites/${artifact.objectId}`)
+                }
+
               })
             }
           })
@@ -134,23 +148,26 @@ $(document).ready(function() {
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
               let starDefault = document.querySelectorAll('.stardefault');
+              let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
-                starDefault[j].src = 'starLiked.png';
-                axios.post('/user_favorites', {
-                  artifact: {
-                    object_id: artifact.objectId,
-                    name: artifact.name,
-                    description: artifact.description,
-                  }
-                })
-              })
-
-              starDefault[j].addEventListener('dblclick', function() {
-                starDefault[j].src = 'unfavorite.png';
+                if (starStatus === "default") {
+                  starStatus = "favorite"
+                  starDefault[j].src = 'starLiked.png';
+                  axios.post('/user_favorites', {
+                    artifact: {
+                      object_id: artifact.objectId,
+                      name: artifact.name,
+                      description: artifact.description,
+                      image: artifact.img
+                    }
+                  })
+                } else {
+                  starDefault[j].src = 'unfavorite.png';
+                  starStatus = "default"
+                  axios.delete(`/user_favorites/${artifact.objectId}`)
+                }
               })
             }
-
-
           })
       }
     })
@@ -245,19 +262,28 @@ $(document).ready(function() {
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
               let starDefault = document.querySelectorAll('.stardefault');
+              let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
-                starDefault[j].src = 'starLiked.png';
-                axios.post('/user_favorites', {
-                  artifact: {
-                    object_id: artifact.objectId,
-                    name: artifact.name,
-                    description: artifact.description,
-                  }
-                })
+                if (starStatus === 'default') {
+                  starStatus = "favorited"
+                  starDefault[j].src = 'starLiked.png';
+                  axios.post('/user_favorites', {
+                    artifact: {
+                      object_id: artifact.objectId,
+                      name: artifact.name,
+                      description: artifact.description,
+                      image: artifact.img
+                    }
+                  })
+
+                } else {
+                  starDefault[j].src = 'unfavorite.png'
+                  starStatus = "default"
+                  axios.delete(`/user_favorites/${artifact.objectId}`)
+                }
               })
-              starDefault[j].addEventListener('dblclick', function() {
-                starDefault[j].src = 'unfavorite.png';
-              })
+
+
             }
           })
         document.querySelector('.displaySection').innerText = "We found the following for " + searchBar.value + ':'
