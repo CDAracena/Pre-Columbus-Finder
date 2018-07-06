@@ -29,8 +29,7 @@ $(document).ready(function() {
       this.timePeriod = response.DateText
       this.objectId = response.ObjectID
 
-    }.src = 'unfavorite.png'
-    axios.delete(`/user_favorites/${artifact.objectId}`)
+    }
   }
   // Random image loader, loads up random images of central america array //
   axios.get('http://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
@@ -275,15 +274,12 @@ $(document).ready(function() {
                       image: artifact.img
                     }
                   })
-
                 } else {
                   starDefault[j].src = 'unfavorite.png'
                   starStatus = "default"
                   axios.delete(`/user_favorites/${artifact.objectId}`)
                 }
               })
-
-
             }
           })
         document.querySelector('.displaySection').innerText = "We found the following for " + searchBar.value + ':'

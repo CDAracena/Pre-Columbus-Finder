@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = current_user
     @users = User.all
+    @user_favorites = UserFavorite.all
   end
 
   def edit
