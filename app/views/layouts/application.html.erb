@@ -36,12 +36,14 @@
         </div>
       <% end %>
     </div>
+    <% unless controller_name == 'users' && action_name == 'index' %>
     <div class="navbar-item">
       <input type="text" class="input is-rounded searchBarField" placeholder="Search..">
       <button type="button" class="button is-danger is-outlined searchButton">
         Search
       </button>
     </div>
+    <%end %>
   </nav>
 
   <%= yield %>

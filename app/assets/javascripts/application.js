@@ -76,6 +76,11 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let modalOpeners = document.querySelectorAll('.cardMainImg');
+              modalOpeners[j].addEventListener('click', function() {
+                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modalImg').src = artifact.img
+              })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
@@ -112,6 +117,11 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let modalOpeners = document.querySelectorAll('.cardMainImg');
+              modalOpeners[j].addEventListener('click', function() {
+                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modalImg').src = artifact.img
+              })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
@@ -146,6 +156,11 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let modalOpeners = document.querySelectorAll('.cardMainImg');
+              modalOpeners[j].addEventListener('click', function() {
+                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modalImg').src = artifact.img
+              })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
@@ -260,6 +275,11 @@ $(document).ready(function() {
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
+              let modalOpeners = document.querySelectorAll('.cardMainImg');
+              modalOpeners[j].addEventListener('click', function() {
+                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modalImg').src = artifact.img
+              })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
               starDefault[j].addEventListener('click', function() {
@@ -289,8 +309,9 @@ $(document).ready(function() {
 
 
 
-
-
-
+  let modalCloser = document.querySelector('.modal-close');
+  modalCloser.addEventListener('click', function() {
+    document.querySelector('.modal').style.display = "none";
+  })
 
 })
