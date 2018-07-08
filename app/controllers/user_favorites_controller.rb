@@ -10,7 +10,6 @@ class UserFavoritesController < ApplicationController
     end
 
     UserFavorite.create(user_id: current_user.id, artifact_id: existing_artifact.id)
-
     render json: {message: 'success'}
   end
 

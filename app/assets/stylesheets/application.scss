@@ -12,11 +12,13 @@
  *
  *= require bulma-start/css/main.css
  *= require toastr/build/toastr.css
+ *= require bulma-toast/dist/bulma-toast.min.css
  *= require_tree .
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Teko');
+
 
 html {
   height: 100%;
@@ -65,4 +67,13 @@ a.userSessionLinks:hover {
 
 .modal {
   display: none;
+}
+
+.modal-content {
+  overflow: visible
+}
+.modal-close:hover {
+  background-color: #ea494b;
+  transition: ease-in-out;
+  transition-delay: 0.1s;
 }
