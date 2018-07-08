@@ -4,13 +4,14 @@
 
 .sideMenuContainer {
   background-color: #ea5359;
-  width: 150px;
+  width: 130px;
   padding: 15px;
   border-radius: 3px;
   box-shadow: 1px 2px 3px darkgrey;
-  height: 75%;
+  height: 69%;
   font-family: 'Teko', sans-serif;
-  position: absolute;
+  position: fixed;
+  margin-top:5px;
 }
 
 a.menuOptions {
@@ -33,12 +34,13 @@ a.menuOptions:hover {
 
 .homeMainContainer {
   margin-left: 162px;
+  margin-top: 5px;
 }
 
 .homeHeaderText {
   margin-top: 12px;
-  border-radius: 4px;
-  box-shadow: 0 4px 5px darkgrey;
+  border-radius: 10px 10px 0px 0px;
+  box-shadow:1px 2px 3px 1px darkgrey;
   background-color: #ea5359;
   color: #f5f4f6;
   box-sizing: border-box;
@@ -59,8 +61,12 @@ a.menuOptions:hover {
 }
 
 .cardMainImg:hover {
-  box-shadow: 3px 1px 10px darkgrey;
-    padding: 1px;
+transition: ease-in-out;
+transition-property: box-shadow;
+transition-delay: 0.2s;
+box-shadow: 3px 1px 10px darkgrey;
+animation: imagePadding 0.8s infinite alternate;
+box-sizing: border-box;
 }
 
 .randomArtifactColumn {
@@ -72,11 +78,28 @@ a.menuOptions:hover {
   display:flex;
   flex-direction: row;
   justify-content: space-evenly !important;
+  margin-top: 1px;
 }
 
 .artifactName {
-  color: #f5f4f6;
+color: #f5f4f6;
 background-color: #ea5359;
 border-radius: 3px;
 font-family: 'Dosis',sans-serif;
+}
+
+
+@keyframes imagePadding {
+  0%{
+    padding:0px;
+  }
+  25% {
+    padding: 1px;
+  }
+  50% {
+    padding: 2px;
+  }
+  100%{
+    padding:3px;
+  }
 }

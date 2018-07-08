@@ -14,6 +14,7 @@
 //= require bulma-start/_javascript/main.js
 //= require jquery/dist/jquery
 //= require toastr/build/toastr.min.js
+//= require bulma-toast/dist/bulma-toast.min.js
 //= require axios/dist/axios
 //= require_tree .
 
@@ -95,12 +96,23 @@ $(document).ready(function() {
                       image: artifact.img
                     }
                   })
+                  bulmaToast.toast({
+                    message: 'Artifact has been added to your favorites!',
+                    type: 'is-success',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 } else {
                   starDefault[j].src = 'unfavorite.png';
                   starStatus = "default"
                   axios.delete(`/user_favorites/${artifact.objectId}`)
+                  bulmaToast.toast({
+                    message: 'Artifact has been removed from your favorites',
+                    type: 'is-danger',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 }
-
               })
             }
           })
@@ -136,10 +148,22 @@ $(document).ready(function() {
                       image: artifact.img
                     }
                   })
+                  bulmaToast.toast({
+                    message: 'Artifact has been added to your favorites!',
+                    type: 'is-success',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 } else {
                   starDefault[j].src = 'unfavorite.png';
                   starStatus = "default"
                   axios.delete(`/user_favorites/${artifact.objectId}`)
+                  bulmaToast.toast({
+                    message: 'Artifact has been removed from your favorites',
+                    type: 'is-danger',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 }
 
               })
@@ -175,10 +199,22 @@ $(document).ready(function() {
                       image: artifact.img
                     }
                   })
+                  bulmaToast.toast({
+                    message: 'Artifact has been added to your favorites!',
+                    type: 'is-success',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 } else {
                   starDefault[j].src = 'unfavorite.png';
                   starStatus = "default"
                   axios.delete(`/user_favorites/${artifact.objectId}`)
+                  bulmaToast.toast({
+                    message: 'Artifact has been removed from your favorites',
+                    type: 'is-danger',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 }
               })
             }
@@ -213,49 +249,47 @@ $(document).ready(function() {
   }
 
   let countries = [{
-      name: 'Mexico',
-      geoId: 609486,
+    name: 'Mexico',
+    geoId: 609486,
 
-    }, {
-      name: 'Guatemala',
-      geoId: 608307,
-    }, {
-      name: 'Nicaragua',
-      geoId: 611842,
-    },
-    {
-      name: 'Costa Rica',
-      geoId: 609720,
-    }, {
-      name: 'Belize',
-      geoId: 607731,
-    }, {
-      name: 'Panama',
-      geoId: 1413064,
-    }, {
-      name: 'Honduras',
-      geoId: 608506,
-    }, {
-      name: 'Colombia',
-      geoId: 1414585,
+  }, {
+    name: 'Guatemala',
+    geoId: 608307,
+  }, {
+    name: 'Nicaragua',
+    geoId: 611842,
+  }, {
+    name: 'Costa Rica',
+    geoId: 609720,
+  }, {
+    name: 'Belize',
+    geoId: 607731,
+  }, {
+    name: 'Panama',
+    geoId: 1413064,
+  }, {
+    name: 'Honduras',
+    geoId: 608506,
+  }, {
+    name: 'Colombia',
+    geoId: 1414585,
 
-    }, {
-      name: 'Peru',
-      geoId: 630620,
-    }, {
-      name: 'Puerto Rico',
-      geoId: 606033,
-    }, {
-      name: 'Dominican Republic',
-      geoId: 607987,
-    }, {
-      name: 'Hispaniola',
-      geoId: 606663,
-    }, {
-      name: 'Ecuador',
-      geoId: 1415238,
-    }
-  ];
+  }, {
+    name: 'Peru',
+    geoId: 630620,
+  }, {
+    name: 'Puerto Rico',
+    geoId: 606033,
+  }, {
+    name: 'Dominican Republic',
+    geoId: 607987,
+  }, {
+    name: 'Hispaniola',
+    geoId: 606663,
+  }, {
+    name: 'Ecuador',
+    geoId: 1415238,
+  }];
 
 
   let searchBar = document.querySelector('.searchBarField');
@@ -294,10 +328,22 @@ $(document).ready(function() {
                       image: artifact.img
                     }
                   })
+                  bulmaToast.toast({
+                    message: 'Artifact has been added to your favorites!',
+                    type: 'is-success',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 } else {
                   starDefault[j].src = 'unfavorite.png'
                   starStatus = "default"
                   axios.delete(`/user_favorites/${artifact.objectId}`)
+                  bulmaToast.toast({
+                    message: 'Artifact has been removed from your favorites',
+                    type: 'is-danger',
+                    duration: 2000,
+                    dismissible: true
+                  })
                 }
               })
             }
