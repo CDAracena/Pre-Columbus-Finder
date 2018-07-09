@@ -70,7 +70,11 @@ a.userSessionLinks:hover {
 }
 
 .modal-content {
-  overflow: visible
+  overflow: visible;
+  padding:3%;
+  height: 100%;
+  align-items: center;
+  display: flex;
 }
 .modal-close:hover {
   background-color: #ea494b;
