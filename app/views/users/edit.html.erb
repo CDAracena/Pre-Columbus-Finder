@@ -1,11 +1,32 @@
-<%=form_for @user do |f| %>
-<%=f.label :f_name %>
-<%=f.text_field :f_name %>
-<%= f.label :l_name %>
-<%=f.text_field :l_name %>
-<%= f.label :email %>
-<%=f.text_field :email %>
+<div class="container mainUserContainer has-text-centered">
+  <div class="colum has-text-centered is-size-2 signUpText">
+    <h1>
+      Update Your Profile
+    </h1>
+  </div>
 
-<%=f.submit%>
+  <%=form_for @user do |f| %>
+  <div class="columns is-centered">
+    <div class="column is-one-third">
+      <%=f.label :f_name, 'First Name'%>
+      <%=f.text_field :f_name, class:'input formFieldBoxShadow' %>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="colum is-one-third">
+      <%= f.label :l_name, 'Last Name' %>
+      <%=f.text_field :l_name, class:'input formFieldBoxShadow' %>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-one-third">
+      <%= f.label :email, 'E-Mail' %>
+      <%=f.text_field :email, class:'input formFieldBoxShadow' %>
+    </div>
+  </div>
+
+  <%=f.submit 'Update', class:'button is-danger is-outlined searchButton'%>
 
 <%end%>
+
+</div>

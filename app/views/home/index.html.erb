@@ -77,5 +77,6 @@
     </div>
 
     <script type="text/javascript">
+      window.userLoggedIn = <%= user_signed_in? %>
       window.API_KEY = '<%= ENV['WALTERS_SECRET_KEY'] %>'
     </script>

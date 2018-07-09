@@ -25,6 +25,6 @@ class UserFavoritesController < ApplicationController
 
 
   def user_favorite_params
-    params.require(:artifact).permit(:object_id, :name, :description, :image)
+    params.require(:artifact).permit(:object_id, :name, :description, :image, :culture, :timePeriod)
   end
 end

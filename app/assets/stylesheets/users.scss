@@ -22,23 +22,20 @@
 
 .userProfileMainContainer {
   font-family: 'Dosis', sans-serif;
-  margin-top: 50px;
 }
 
 .heroBanner {
   background: linear-gradient(141deg, #eebbc1 0%, #e9707a 71%, #ff5257 100%) !important;
   box-shadow: 1px 2px darkgrey;
   color: #f4f0f3;
-  border-radius: 5px;
 }
 
 .userInfoRow {
   align-items: center;
   height: 140px;
-  margin-top: 5px;
-  border: 3px solid #ea858e;
+  margin-top:5px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 1px darkgrey;
+
 }
 
 .updateLink {
@@ -51,6 +48,8 @@
   color: #f4f0f3;
   animation: 1s increaseFontSize;
   animation-fill-mode: forwards;
+  transition: animation;
+  transition-timing-function:  ease-in-out;
 }
 @keyframes increaseFontSize {
   0% {
@@ -78,4 +77,12 @@
 }
 .favoriteDescription {
   overflow: auto;
+}
+
+.favoritesContainer{
+  margin-top:20px;
+}
+
+.favoritesText {
+  font-family: 'Dosis', sans-serif;
 }

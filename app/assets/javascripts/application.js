@@ -84,36 +84,40 @@ $(document).ready(function() {
               })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
-              starDefault[j].addEventListener('click', function() {
-                if (starStatus === "default") {
-                  starStatus = "favorite"
-                  starDefault[j].src = 'starLiked.png';
-                  axios.post('/user_favorites', {
-                    artifact: {
-                      object_id: artifact.objectId,
-                      name: artifact.name,
-                      description: artifact.description,
-                      image: artifact.img
-                    }
-                  })
-                  bulmaToast.toast({
-                    message: 'Artifact has been added to your favorites!',
-                    type: 'is-success',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                } else {
-                  starDefault[j].src = 'unfavorite.png';
-                  starStatus = "default"
-                  axios.delete(`/user_favorites/${artifact.objectId}`)
-                  bulmaToast.toast({
-                    message: 'Artifact has been removed from your favorites',
-                    type: 'is-danger',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                }
-              })
+              if (starDefault.length > 0) {
+                starDefault[j].addEventListener('click', function() {
+                  if (starStatus === "default") {
+                    starStatus = "favorite"
+                    starDefault[j].src = 'starLiked.png';
+                    axios.post('/user_favorites', {
+                      artifact: {
+                        object_id: artifact.objectId,
+                        name: artifact.name,
+                        description: artifact.description,
+                        image: artifact.img,
+                        culture: artifact.culture,
+                        timePeriod: artifact.timePeriod
+                      }
+                    })
+                    bulmaToast.toast({
+                      message: 'Artifact has been added to your favorites!',
+                      type: 'is-success',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  } else {
+                    starDefault[j].src = 'unfavorite.png';
+                    starStatus = "default"
+                    axios.delete(`/user_favorites/${artifact.objectId}`)
+                    bulmaToast.toast({
+                      message: 'Artifact has been removed from your favorites',
+                      type: 'is-danger',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  }
+                })
+              }
             }
           })
 
@@ -136,37 +140,38 @@ $(document).ready(function() {
               })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
-              starDefault[j].addEventListener('click', function() {
-                if (starStatus === "default") {
-                  starStatus = "favorited"
-                  starDefault[j].src = 'starLiked.png';
-                  axios.post('/user_favorites', {
-                    artifact: {
-                      object_id: artifact.objectId,
-                      name: artifact.name,
-                      description: artifact.description,
-                      image: artifact.img
-                    }
-                  })
-                  bulmaToast.toast({
-                    message: 'Artifact has been added to your favorites!',
-                    type: 'is-success',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                } else {
-                  starDefault[j].src = 'unfavorite.png';
-                  starStatus = "default"
-                  axios.delete(`/user_favorites/${artifact.objectId}`)
-                  bulmaToast.toast({
-                    message: 'Artifact has been removed from your favorites',
-                    type: 'is-danger',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                }
-
-              })
+              if (starDefault.length > 0) {
+                starDefault[j].addEventListener('click', function() {
+                  if (starStatus === "default") {
+                    starStatus = "favorited"
+                    starDefault[j].src = 'starLiked.png';
+                    axios.post('/user_favorites', {
+                      artifact: {
+                        object_id: artifact.objectId,
+                        name: artifact.name,
+                        description: artifact.description,
+                        image: artifact.img
+                      }
+                    })
+                    bulmaToast.toast({
+                      message: 'Artifact has been added to your favorites!',
+                      type: 'is-success',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  } else {
+                    starDefault[j].src = 'unfavorite.png';
+                    starStatus = "default"
+                    axios.delete(`/user_favorites/${artifact.objectId}`)
+                    bulmaToast.toast({
+                      message: 'Artifact has been removed from your favorites',
+                      type: 'is-danger',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  }
+                })
+              }
             }
           })
       } else if (regionsText[i].textContent === "South America") {
@@ -187,36 +192,38 @@ $(document).ready(function() {
               })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
-              starDefault[j].addEventListener('click', function() {
-                if (starStatus === "default") {
-                  starStatus = "favorite"
-                  starDefault[j].src = 'starLiked.png';
-                  axios.post('/user_favorites', {
-                    artifact: {
-                      object_id: artifact.objectId,
-                      name: artifact.name,
-                      description: artifact.description,
-                      image: artifact.img
-                    }
-                  })
-                  bulmaToast.toast({
-                    message: 'Artifact has been added to your favorites!',
-                    type: 'is-success',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                } else {
-                  starDefault[j].src = 'unfavorite.png';
-                  starStatus = "default"
-                  axios.delete(`/user_favorites/${artifact.objectId}`)
-                  bulmaToast.toast({
-                    message: 'Artifact has been removed from your favorites',
-                    type: 'is-danger',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                }
-              })
+              if (starDefault.length > 0) {
+                starDefault[j].addEventListener('click', function() {
+                  if (starStatus === "default") {
+                    starStatus = "favorite"
+                    starDefault[j].src = 'starLiked.png';
+                    axios.post('/user_favorites', {
+                      artifact: {
+                        object_id: artifact.objectId,
+                        name: artifact.name,
+                        description: artifact.description,
+                        image: artifact.img
+                      }
+                    })
+                    bulmaToast.toast({
+                      message: 'Artifact has been added to your favorites!',
+                      type: 'is-success',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  } else {
+                    starDefault[j].src = 'unfavorite.png';
+                    starStatus = "default"
+                    axios.delete(`/user_favorites/${artifact.objectId}`)
+                    bulmaToast.toast({
+                      message: 'Artifact has been removed from your favorites',
+                      type: 'is-danger',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  }
+                })
+              }
             }
           })
       }
@@ -226,7 +233,7 @@ $(document).ready(function() {
   // For the Caribbean
 
   function generateArtifactDiv(artifact) {
-    return `
+    let divString = `
       <div class="columns is-multiline has-text-centered">
         <div class="column artifactName">
           ${artifact.name}
@@ -237,15 +244,19 @@ $(document).ready(function() {
         <div class="column artifactDescription">
           ${"Culture: " + artifact.culture + ", " + "Date: " + artifact.timePeriod}
         </div>
-      </div>
-      <div class="columns starSystemRow">
-        <div class="column is-one-quarter has-text-left">
-        <figure class="image is-32x32">
-          <img src="unfavorite.png" class="stardefault">
-          </figure>
-        </div>
-      </div>
-  `
+      </div>`
+    if (window.userLoggedIn) {
+      divString += `      <div class="columns starSystemRow">
+                <div class="column is-one-quarter has-text-left">
+                <figure class="image is-32x32">
+                  <img src="unfavorite.png" class="stardefault">
+                  </figure>
+                </div>
+              </div>`
+    }
+
+    return divString
+
   }
 
   let countries = [{
@@ -295,7 +306,6 @@ $(document).ready(function() {
   let searchBar = document.querySelector('.searchBarField');
   let searchBarButton = document.querySelector('.searchButton')
   searchBarButton.addEventListener('click', function() {
-
     for (let i = 0; i < countries.length; i++) {
       countries[i].name = countries[i].name.toLowerCase();
       if (countries[i].name === searchBar.value.toLowerCase()) {
@@ -316,44 +326,44 @@ $(document).ready(function() {
               })
               let starDefault = document.querySelectorAll('.stardefault');
               let starStatus = "default"
-              starDefault[j].addEventListener('click', function() {
-                if (starStatus === 'default') {
-                  starStatus = "favorited"
-                  starDefault[j].src = 'starLiked.png';
-                  axios.post('/user_favorites', {
-                    artifact: {
-                      object_id: artifact.objectId,
-                      name: artifact.name,
-                      description: artifact.description,
-                      image: artifact.img
-                    }
-                  })
-                  bulmaToast.toast({
-                    message: 'Artifact has been added to your favorites!',
-                    type: 'is-success',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                } else {
-                  starDefault[j].src = 'unfavorite.png'
-                  starStatus = "default"
-                  axios.delete(`/user_favorites/${artifact.objectId}`)
-                  bulmaToast.toast({
-                    message: 'Artifact has been removed from your favorites',
-                    type: 'is-danger',
-                    duration: 2000,
-                    dismissible: true
-                  })
-                }
-              })
+              if (starDefault.length > 0) {
+                starDefault[j].addEventListener('click', function() {
+                  if (starStatus === 'default') {
+                    starStatus = "favorited"
+                    starDefault[j].src = 'starLiked.png';
+                    axios.post('/user_favorites', {
+                      artifact: {
+                        object_id: artifact.objectId,
+                        name: artifact.name,
+                        description: artifact.description,
+                        image: artifact.img
+                      }
+                    })
+                    bulmaToast.toast({
+                      message: 'Artifact has been added to your favorites!',
+                      type: 'is-success',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  } else {
+                    starDefault[j].src = 'unfavorite.png'
+                    starStatus = "default"
+                    axios.delete(`/user_favorites/${artifact.objectId}`)
+                    bulmaToast.toast({
+                      message: 'Artifact has been removed from your favorites',
+                      type: 'is-danger',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  }
+                })
+              }
             }
           })
         document.querySelector('.displaySection').innerText = "We found the following for " + searchBar.value + ':'
       }
     }
   })
-
-
 
   let modalCloser = document.querySelector('.modal-close');
   modalCloser.addEventListener('click', function() {
