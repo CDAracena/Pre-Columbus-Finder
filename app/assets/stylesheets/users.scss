@@ -107,4 +107,9 @@
 .deleteCall:hover {
   background-color: #f5f7f8;
   color: #ea5359;
+  box-shadow: 2px 2px 2px darkgrey;
+}
+
+.userInfoRow:hover {
+  box-shadow: 1px 5px 10px darkgrey;
 }
