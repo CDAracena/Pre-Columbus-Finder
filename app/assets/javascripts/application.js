@@ -239,7 +239,9 @@ $(document).ready(function() {
           ${artifact.name}
         </div>
       </div>
+      <div class="imgSize">
       <img src="${artifact.img}" class="cardMainImg">
+      </div>
       <div class="columns randomArtifactDescription">
         <div class="column artifactDescription">
           ${"Culture: " + artifact.culture + ", " + "Date: " + artifact.timePeriod}

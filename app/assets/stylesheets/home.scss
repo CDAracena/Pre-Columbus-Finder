@@ -39,7 +39,6 @@ a.menuOptions:hover {
 
 .homeHeaderText {
   margin-top: 12px;
-  border-radius: 10px 10px 0px 0px;
   box-shadow:1px 2px 3px 1px darkgrey;
   background-color: #ea5359;
   color: #f5f4f6;
@@ -58,6 +57,7 @@ a.menuOptions:hover {
 .cardMainImg {
   width: 300px;
   cursor: pointer;
+ max-height: 400px
 }
 
 .cardMainImg:hover {

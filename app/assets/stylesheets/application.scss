@@ -29,9 +29,7 @@ body {
   min-height: 100%
 }
 .navBackground {
-  background: linear-gradient(to right, #f5f6f8, #ea494b);
-  box-shadow: 1px 1px 1px darkgrey;
-  color: #444;
+  background-color: #f5f7f8;
   font-size: 20px;
   font-family: 'Dosis', sans-serif;
   display: flex;
@@ -44,17 +42,24 @@ body {
   width: 70px !important;
 }
 
+.searchBarField:focus {
+  box-shadow: 2px 2px lightgrey;
+  border-color: #ea5359;
+}
 .searchButton {
-  background-color: #f0c5c1 !important;
+  background-color: #f5edf5 !important;
   font-family: 'Dosis', sans-serif;
+  color: #ea5359;
 }
 
 .searchButton:hover {
-  color: #444 !important;
+  color: #f4edf5 !important;
+  background-color: #ea5359 !important ;
+  box-shadow: 4px 5px 3px lightgrey;
 }
 
 a.userSessionLinks {
-  color: #444;
+  color: #941318;
 }
 
 a.userSessionLinks:hover {
@@ -67,6 +72,7 @@ a.userSessionLinks:hover {
 
 .modal {
   display: none;
+
 }
 
 .modal-content {
@@ -80,4 +86,40 @@ a.userSessionLinks:hover {
   background-color: #ea494b;
   transition: ease-in-out;
   transition-delay: 0.1s;
+}
+
+.modalImg {
+  border-radius: 5px;
+  animation: 1s modalImgSkew forwards;
+  opacity: 0.9;
+  box-shadow:1px 1px 10px darkgrey
+}
+
+.modal-background {
+    background-image: url('/amazon-rainforest-wallpaper-4.jpg');
+    opacity: 0.5;
+    transition: background-image;
+    transition-timing-function: ease-in-out;
+}
+
+.imgSize {
+  min-height: 410px;
+}
+
+@keyframes modalImgSkew {
+  0%{
+    transform: skewY(0deg);
+  }
+  25% {
+    transform: skewY(2deg);
+  }
+  50% {
+    transform: skewY(4deg);
+  }
+  75% {
+    transform: skewY(6deg);
+  }
+  100% {
+    transform: skewY(8deg);
+  }
 }
