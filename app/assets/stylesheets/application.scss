@@ -19,15 +19,15 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 @import url('https://fonts.googleapis.com/css?family=Teko');
 
-
 html {
   height: 100%;
 }
 
 body {
   background-color: #f5f7f8;
-  min-height: 100%
+  min-height: 100%;
 }
+
 .navBackground {
   background-color: #f5f7f8;
   font-size: 20px;
@@ -46,6 +46,7 @@ body {
   box-shadow: 2px 2px lightgrey;
   border-color: #ea5359;
 }
+
 .searchButton {
   background-color: #f5edf5 !important;
   font-family: 'Dosis', sans-serif;
@@ -54,7 +55,7 @@ body {
 
 .searchButton:hover {
   color: #f4edf5 !important;
-  background-color: #ea5359 !important ;
+  background-color: #ea5359 !important;
   box-shadow: 4px 5px 3px lightgrey;
 }
 
@@ -67,21 +68,21 @@ a.userSessionLinks:hover {
 }
 
 .stardefault {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .modal {
   display: none;
-
 }
 
 .modal-content {
   overflow: visible;
-  padding:3%;
+  padding: 3%;
   height: 100%;
   align-items: center;
   display: flex;
 }
+
 .modal-close:hover {
   background-color: #ea494b;
   transition: ease-in-out;
@@ -92,38 +93,42 @@ a.userSessionLinks:hover {
   border-radius: 5px;
   animation: 1s modalImgSkew forwards;
   opacity: 0.9;
-  box-shadow:1px 1px 10px darkgrey
+  box-shadow: 1px 1px 10px darkgrey;
 }
 
 .modal-background {
-    background-image: url('/amazon-rainforest-wallpaper-4.jpg');
-    opacity: 0.5;
-    transition: background-image;
-    transition-timing-function: ease-in-out;
+  background-image: url("/amazon-rainforest-wallpaper-4.jpg");
+  opacity: 0.5;
+  transition: background-image;
+  transition-timing-function: ease-in-out;
 }
 
 .imgSize {
   min-height: 410px;
 }
-
 @keyframes modalImgSkew {
-  0%{
+  0% {
     transform: skewY(0deg);
   }
+
   25% {
     transform: skewY(2deg);
   }
+
   50% {
     transform: skewY(4deg);
   }
+
   75% {
     transform: skewY(6deg);
   }
+
   100% {
     transform: skewY(8deg);
   }
 }
 
-.headTitleText {
+.mainLogoText {
   font-size: 30px;
+  text-shadow: 2px 2px darkgrey;
 }

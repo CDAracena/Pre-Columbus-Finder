@@ -14,7 +14,7 @@
     <nav class="navbar navBackground" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <div class="navbar-item">
-        <%=link_to 'Pre Columbus Finder', root_path, class:'userSessionLinks headTitleText' %>
+          <%=link_to 'Pre Columbus Finder', root_path, class:'userSessionLinks mainLogoText' %>
 
           <%= link_to root_path do %>
           <%= image_tag image_path('America_Latina_red.svg.png'), class:'navbarLogo' %>
@@ -38,16 +38,17 @@
       <% end %>
     </div>
     <% unless controller_name == 'users' && action_name == 'index' %>
-    <div class="navbar-item">
-      <input type="text" class="input is-rounded searchBarField" placeholder="Search by country..">
-      <button type="button" class="button is-danger is-outlined searchButton">
-        Search
-      </button>
-    </div>
+      <div class="navbar-item">
+        <input type="text" class="input is-rounded searchBarField" placeholder="Search by country..">
+        <button type="button" class="button is-danger is-outlined searchButton">
+          Search
+        </button>
+      </div>
     <%end %>
   </nav>
 
   <%= yield %>
+
 
 </body>
 </html>

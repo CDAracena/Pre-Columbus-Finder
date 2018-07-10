@@ -22,20 +22,23 @@
 
 .userProfileMainContainer {
   font-family: 'Dosis', sans-serif;
+  background-color: #f5e7e7;
 }
 
 .heroBanner {
   background-color: #ea5359 !important;
-  box-shadow: 1px 2px darkgrey;
   color: #f4f0f3;
+}
+
+.heroBanner:hover {
+  box-shadow: 1px 2px 10px darkgrey;
 }
 
 .userInfoRow {
   align-items: center;
   height: 140px;
-  margin-top:5px;
+  margin-top: 5px;
   box-sizing: border-box;
-
 }
 
 .updateLink {
@@ -49,7 +52,7 @@
   animation: 1s increaseFontSize;
   animation-fill-mode: forwards;
   transition: animation;
-  transition-timing-function:  ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 @keyframes increaseFontSize {
   0% {
@@ -66,23 +69,24 @@
 }
 
 .favoriteColumn {
-  height:140px;
-  border-right:1px solid #f8f8f957;
+  height: 140px;
+  border-right: 1px solid #f8f8f957;
+}
 
-}
 .favoriteImg {
-  display:flex;
-  justify-content:center;
-  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 }
+
 .favoriteDescription {
   overflow: auto;
   background-color: #f5f7f8;
   color: #ea5359;
 }
 
-.favoritesContainer{
-  margin-top:20px;
+.favoritesContainer {
+  margin-top: 20px;
 }
 
 .favoritesText {
@@ -91,14 +95,14 @@
 
 .heroMainer {
   height: 120px;
-
 }
+
 .heroContainer {
   color: #ea5359;
 }
 
 .deleteCall {
-  border:1px solid #f5f7f8;
+  border: 1px solid #f5f7f8;
   border-radius: 5px;
   padding: 4px;
   color: #f5f7f8;
@@ -107,9 +111,4 @@
 .deleteCall:hover {
   background-color: #f5f7f8;
   color: #ea5359;
-  box-shadow: 2px 2px 2px darkgrey;
-}
-
-.userInfoRow:hover {
-  box-shadow: 1px 5px 10px darkgrey;
 }
