@@ -1,6 +1,6 @@
 <div class="container-fluid  userProfileMainContainer">
-  <div class="hero is-danger is-bold heroBanner">
-    <div class="hero-body">
+  <div class="heroContainer">
+    <div class="hero-body heroMainer">
       <div class="column">
         <h1 class="has-text-centered is-size-2">
           Welcome To Your Profile
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<div class="container favoritesContainer">
+<div class="container-fluid favoritesContainer">
   <div class="hero heroBanner">
     <div class="hero-body">
       <h1 class="has-text-centered is-size-2 favoritesText">My Favorites!
@@ -60,6 +60,8 @@
         <%= favorite.artifact.culture %>
         <br>
         <%= favorite.artifact.timePeriod %>
+        <br>
+        <%= link_to 'Delete', user_favorite_path(favorite.artifact.object_id), method: :delete, data:{confirm: 'Are You Sure?'}, class:'deleteCall' %>
       </div>
     </div>
 

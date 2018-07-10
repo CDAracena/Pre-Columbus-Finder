@@ -14,12 +14,11 @@ class UserFavoritesController < ApplicationController
   end
 
   def destroy
-
     artifact = Artifact.find_by(object_id: params[:id])
     user_favorite = UserFavorite.find_by(artifact_id: artifact.id, user_id: current_user.id) if artifact
 
     user_favorite.destroy if user_favorite
-    render json: {message: 'deleted'}
+    redirect_to users_path
 
   end
 

@@ -25,7 +25,7 @@
 }
 
 .heroBanner {
-  background: linear-gradient(141deg, #eebbc1 0%, #e9707a 71%, #ff5257 100%) !important;
+  background-color: #ea5359 !important;
   box-shadow: 1px 2px darkgrey;
   color: #f4f0f3;
 }
@@ -40,12 +40,12 @@
 
 .updateLink {
   margin: auto;
-  color: #444444;
+  color: #ea5359;
   font-size: 25px;
 }
 
 .updateLink:hover {
-  color: #f4f0f3;
+  color: #ac3026;
   animation: 1s increaseFontSize;
   animation-fill-mode: forwards;
   transition: animation;
@@ -77,6 +77,8 @@
 }
 .favoriteDescription {
   overflow: auto;
+  background-color: #f5f7f8;
+  color: #ea5359;
 }
 
 .favoritesContainer{
@@ -85,4 +87,24 @@
 
 .favoritesText {
   font-family: 'Dosis', sans-serif;
+}
+
+.heroMainer {
+  height: 120px;
+
+}
+.heroContainer {
+  color: #ea5359;
+}
+
+.deleteCall {
+  border:1px solid #f5f7f8;
+  border-radius: 5px;
+  padding: 4px;
+  color: #f5f7f8;
+}
+
+.deleteCall:hover {
+  background-color: #f5f7f8;
+  color: #ea5359;
 }

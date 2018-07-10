@@ -22,6 +22,20 @@
   </div>
   <div class="columns is-centered">
     <div class="column is-one-third">
+      <div clas="field">
+        <%= f.label :f_name, 'First Name(optional)' %>
+        <%= f.text_field :f_name, class:'input formFieldBoxShadow'%>
+      </div>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-one-third">
+      <%= f.label :l_name, 'Last Name(optional)' %>
+      <%= f.text_field :l_name, class:'input formFieldBoxShadow' %>
+    </div>
+  </div>
+  <div class="columns is-centered">
+    <div class="column is-one-third">
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
