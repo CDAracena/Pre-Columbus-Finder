@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery/dist/jquery.min.js
 //= require toastr/build/toastr.min.js
 //= require bulma-toast/dist/bulma-toast.min.js
 //= require axios/dist/axios
