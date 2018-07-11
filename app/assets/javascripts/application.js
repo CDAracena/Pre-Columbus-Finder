@@ -11,8 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require bulma-start/_javascript/main.js
-//= require jquery/dist/jquery
+//= require jquery/dist/jquery.min.js
 //= require toastr/build/toastr.min.js
 //= require bulma-toast/dist/bulma-toast.min.js
 //= require axios/dist/axios
