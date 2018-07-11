@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require /bulma-start/_javascript/main.js
-//= require /jquery/dist/jquery
-//= require /toastr/build/toastr.min.js
-//= require /bulma-toast/dist/bulma-toast.min.js
-//= require /axios/dist/axios
-//= require /jquery-ui
+//= require bulma-start
+//= require jquery
+//= require toastr
+//= require bulma-toast
+//= require axios
+//= require jquery-ui
 //= require_tree .
 
 $(document).ready(function() {
