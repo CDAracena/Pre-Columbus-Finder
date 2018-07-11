@@ -83,5 +83,5 @@ production:
   database: pre_columbus_finder_production
   username: pre_columbus_finder
   password: <%= ENV['PRE_COLUMBUS_FINDER_DATABASE_PASSWORD'] %>
-  secret_key_base: 'a20a2b049ddb7f43d3c333bd375321ed6dfe12312d07973f023ff24012d92440c9488809b5b9e32c8fe6a24a95b73c36c5518b97e80e44b53b893a6acb2cb4a5
+  secret_key_base: <%= ENV['SECRET_KEY_BASE'] %>
 '
