@@ -16,6 +16,7 @@
 //= require toastr/build/toastr.min.js
 //= require bulma-toast/dist/bulma-toast.min.js
 //= require axios/dist/axios
+//= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
