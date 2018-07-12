@@ -34,7 +34,7 @@ $(document).ready(function() {
     }
   }
   // Random image loader, loads up random images of central america array //
-  axios.get('//api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
+  axios.get('https://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
     .then(function(response) {
 
       let cardImages = document.querySelectorAll('.cardMainImg');
@@ -68,7 +68,7 @@ $(document).ready(function() {
       document.querySelector('.displaySection').innerText = regionsText[i].textContent
 
       if (regionsText[i].textContent === "Central America") {
-        axios.get('//api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
+        axios.get('https://api.thewalters.org/v1/collections/2/objects?&apikey=' + window.API_KEY)
           .then(function(response) {
             let mainContainer = document.querySelector('.randomArtifactRow');
             mainContainer.innerHTML = '';
@@ -124,7 +124,7 @@ $(document).ready(function() {
 
 
       } else if (regionsText[i].textContent === "The Caribbean") {
-        axios.get('//api.thewalters.org/v1/geographies/607987/objects?apikey=' + window.API_KEY)
+        axios.get('https://api.thewalters.org/v1/geographies/607987/objects?apikey=' + window.API_KEY)
           .then(function(response) {
             let mainContainer = document.querySelector('.randomArtifactRow');
             mainContainer.innerHTML = '';
@@ -176,7 +176,7 @@ $(document).ready(function() {
             }
           })
       } else if (regionsText[i].textContent === "South America") {
-        axios.get('//api.thewalters.org/v1/geographies/1415776/objects?apikey=' + window.API_KEY)
+        axios.get('https://api.thewalters.org/v1/geographies/1415776/objects?apikey=' + window.API_KEY)
           .then(function(response) {
             let mainContainer = document.querySelector('.randomArtifactRow');
             mainContainer.innerHTML = '';
@@ -312,7 +312,7 @@ $(document).ready(function() {
     for (let i = 0; i < countries.length; i++) {
       countries[i].name = countries[i].name.toLowerCase();
       if (countries[i].name === searchBar.value.toLowerCase()) {
-        axios.get('//api.thewalters.org/v1/geographies/' + countries[i].geoId + '/objects?apikey=' + window.API_KEY)
+        axios.get('https://api.thewalters.org/v1/geographies/' + countries[i].geoId + '/objects?apikey=' + window.API_KEY)
           .then(function(response) {
             let mainContainer = document.querySelector('.randomArtifactRow');
             mainContainer.innerHTML = '';
