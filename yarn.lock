@@ -20,6 +20,10 @@ bulma-start@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/bulma-start/-/bulma-start-0.0.2.tgz#472507881b1b27af29e009c8599503e1462d2031"
 
+bulma-toast@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/bulma-toast/-/bulma-toast-0.1.0.tgz#759c0137cf9172ef51d0d2ac639608738e140a24"
+
 debug@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
