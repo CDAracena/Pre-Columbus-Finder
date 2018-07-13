@@ -34,6 +34,8 @@ The Search bar located on the home index page can be used by either a non-regist
 * Dominican Republic
 * Mexico
 
+## Modal Images
+Items can be viewed in a modal version. Simply click on the item you wish to see, and the image will appear in a modal in a much larger format.
 
 ## Star System
 **Only registered users can use the star system**
