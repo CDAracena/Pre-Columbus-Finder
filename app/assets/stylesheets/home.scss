@@ -58,7 +58,8 @@ a.menuOptions:hover {
 .cardMainImg {
   width: 300px;
   cursor: pointer;
- max-height: 400px
+ max-height: 400px;
+ border-radius: 3px;
 }
 
 .cardMainImg:hover {
