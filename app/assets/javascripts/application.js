@@ -61,6 +61,8 @@ $(document).ready(function() {
 
   //Loops for menu options. First one is central america //
 
+  //Edited http links
+
   for (let i = 0; i < regionsText.length; i++) {
 
     regionsText[i].addEventListener('click', function() {
@@ -261,6 +263,7 @@ $(document).ready(function() {
     return divString
 
   }
+
 
   let countries = [{
     name: 'Mexico',
