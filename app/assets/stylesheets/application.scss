@@ -34,7 +34,7 @@ body {
   font-family: 'Dosis', sans-serif;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .navbarLogo {
@@ -131,4 +131,124 @@ a.userSessionLinks:hover {
 .mainLogoText {
   font-size: 30px;
   text-shadow: 2px 2px darkgrey;
+}
+
+.navbar-burger {
+  color: #ea5359;
+  position: inherit;
+}
+@media screen and (max-width: 400px) {
+  .sideMenuContainer {
+    display: none;
+    margin-top: 0;
+    padding: 5px;
+    width: 110px;
+    animation: 0.5s mobileSideMenu forwards;
+    transition: animation;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+  }
+
+  .homeMainContainer {
+    margin: 0 auto;
+  }
+
+  .listmenuOptions {
+    padding-bottom: 15px;
+    animation: 1s opacityText forwards;
+    transition: animation;
+    transition-timing-function: ease-in;
+  }
+
+  .menuLabelText {
+    animation: 1s opacityText forwards;
+  }
+
+  .menu-label {
+    margin-bottom: 0 !important;
+  }
+
+  .mobileSearchBarRow {
+    display: block !important;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .mobileSearchBarCol {
+    display: block !important;
+    margin-top: 5px;
+  }
+
+  .logOutMobile {
+    position: absolute;
+    top: 0;
+    left: 250px;
+  }
+
+  .navBackground {
+    justify-content: space-between;
+  }
+
+  .randomArtifactColumn {
+    width: 90% !important;
+  }
+  .mobileHome{
+    position: absolute;
+    left: 135px;
+  }
+}
+@keyframes mobileSideMenu {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 30px;
+  }
+
+  50% {
+    width: 60px;
+  }
+
+  75% {
+    width: 90px;
+  }
+
+  100% {
+    width: 110px;
+  }
+}
+@keyframes opacityText {
+  0% {
+    opacity: 0.0;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  75% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.mobileSearchBarRow {
+  display: none;
+  width: 95%;
+}
+
+.mobileSearchBarCol {
+  display: none;
+}
+
+.mobileHome {
+  display: none;
 }

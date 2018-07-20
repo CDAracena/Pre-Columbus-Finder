@@ -14,42 +14,55 @@
   <body>
     <nav class="navbar navBackground" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <div class="navbar-item">
-          <%=link_to 'Pre Columbus Finder', root_path, class:'userSessionLinks mainLogoText' %>
+        <div class="navbar-start">
+          <div class="navbar-item is-hidden-mobile">
+            <%=link_to 'Pre Columbus Finder', root_path, class:'userSessionLinks mainLogoText' %>
 
-          <%= link_to root_path do %>
-          <%= image_tag image_path('America_Latina_red.svg.png'), class:'navbarLogo' %>
-        <% end %>
-      </div>
-      <% if user_signed_in? %>
-        <div class="navbar-item">
-          <%= link_to "My Profile", users_path, class:'userSessionLinks' %>
+            <%= link_to root_path do %>
+            <%= image_tag image_path('America_Latina_red.svg.png'), class:'navbarLogo' %>
+          <% end %>
         </div>
-        <div class="navbar-item">
-          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:'userSessionLinks' %>
+        <% if user_signed_in? %>
+          <div class="navbar-item">
+            <%= link_to "My Profile", users_path, class:'userSessionLinks' %>
+          </div>
+          <div class="navbar-item logOutMobile">
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class:'userSessionLinks' %>
+          </div>
         </div>
-
       <% else %>
-        <div class="navbar-item">
+        <div class="navbar-item is-hidden-mobile">
           <%=link_to 'Sign In', new_user_session_path, class:'userSessionLinks' %>
         </div>
-        <div class="navbar-item">
+        <div class="navbar-item is-hidden-mobile">
           <%= link_to 'Sign Up', new_user_registration_path, class:'userSessionLinks' %>
         </div>
       <% end %>
-    </div>
-    <% unless controller_name == 'users' && action_name == 'index' %>
-      <div class="navbar-item">
-        <input type="text" class="input is-rounded searchBarField" placeholder="Search by country..">
-        <button type="button" class="button is-danger is-outlined searchButton">
-          Search
-        </button>
+      <% if controller_name == 'users' && action_name == 'index' %>
+      <div class="navbar-item mobileHome">
+        <%= link_to 'Home', root_path, class:'userSessionLinks' %>
       </div>
-    <%end %>
+      <% end %>
+      <% unless controller_name == 'users' && action_name == 'index' %>
+        <div class="navbar-end">
+          <div class="navbar-item is-hidden-mobile">
+            <input type="text" class="input is-rounded searchBarField" placeholder="Search by country..">
+            <button type="button" class="button is-danger is-outlined searchButton">
+              Search
+            </button>
+          </div>
+        </div>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      <%end %>
+    </div>
+
   </nav>
 
   <%= yield %>
-
 
 </body>
 </html>
