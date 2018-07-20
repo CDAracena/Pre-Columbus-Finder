@@ -147,6 +147,8 @@ a.userSessionLinks:hover {
     transition: animation;
     transition-timing-function: ease-in-out;
     z-index: 1;
+    box-shadow: 1px 1px 1px darkgrey;
+    height: 65%;
   }
 
   .homeMainContainer {
