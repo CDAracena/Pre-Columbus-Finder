@@ -76,7 +76,7 @@ $(document).ready(function() {
             mainContainer.innerHTML = '';
             for (let j = 0; j < response.data.Items.length; ++j) {
               let artifactContainerDiv = document.createElement('div');
-              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn');
+              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn', 'is-three-quarters-mobile');
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
@@ -132,7 +132,7 @@ $(document).ready(function() {
             mainContainer.innerHTML = '';
             for (let j = 0; j < response.data.Items.length; ++j) {
               let artifactContainerDiv = document.createElement('div');
-              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn');
+              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn', 'is-three-quarters-mobile');
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
@@ -184,7 +184,7 @@ $(document).ready(function() {
             mainContainer.innerHTML = '';
             for (let j = 0; j < response.data.Items.length; ++j) {
               let artifactContainerDiv = document.createElement('div');
-              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn');
+              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn', 'is-three-quarters-mobile');
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
@@ -321,7 +321,7 @@ $(document).ready(function() {
             mainContainer.innerHTML = '';
             for (let j = 0; j < response.data.Items.length; ++j) {
               let artifactContainerDiv = document.createElement('div');
-              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn');
+              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn', 'is-three-quarters-mobile');
               let artifact = new Artifact(response.data.Items[j])
               artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
               mainContainer.appendChild(artifactContainerDiv)
@@ -375,5 +375,82 @@ $(document).ready(function() {
   modalCloser.addEventListener('click', function() {
     document.querySelector('.modal').style.display = "none";
   })
+
+  let menuBurger = document.querySelector('.navbar-burger');
+  let menuStatus = "closed";
+  menuBurger.addEventListener('click', function() {
+    if (menuStatus === "closed") {
+      menuStatus = "open";
+      document.querySelector('.sideMenuContainer').style.display = "block"
+    } else {
+      menuStatus = "closed"
+      document.querySelector('.sideMenuContainer').style.display = "none";
+
+    }
+
+  })
+  // Mobile Version:
+  let searchBarMobile = document.querySelector('.searchBarFieldmobile');
+  let searchBarButtonMobile = document.querySelector('.searchButtonmobile')
+  searchBarButtonMobile.addEventListener('click', function() {
+    for (let i = 0; i < countries.length; i++) {
+      countries[i].name = countries[i].name.toLowerCase();
+      if (countries[i].name === searchBarMobile.value.toLowerCase()) {
+        axios.get('https://api.thewalters.org/v1/geographies/' + countries[i].geoId + '/objects?apikey=ftMXf13tuQ772Gc4rOYoSoighYVBXEPP2KVDa6fRWNh6Fbkp3Z1oPcFqBfp7VrMf')
+          .then(function(response) {
+            let mainContainer = document.querySelector('.randomArtifactRow');
+            mainContainer.innerHTML = '';
+            for (let j = 0; j < response.data.Items.length; ++j) {
+              let artifactContainerDiv = document.createElement('div');
+              artifactContainerDiv.classList.add('column', 'is-one-quarter', 'randomArtifactColumn', 'is-three-quarters-mobile');
+              let artifact = new Artifact(response.data.Items[j])
+              artifactContainerDiv.innerHTML = generateArtifactDiv(artifact);
+              mainContainer.appendChild(artifactContainerDiv)
+              let modalOpeners = document.querySelectorAll('.cardMainImg');
+              modalOpeners[j].addEventListener('click', function() {
+                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modalImg').src = artifact.img
+              })
+              let starDefault = document.querySelectorAll('.stardefault');
+              let starStatus = "default"
+              if (starDefault.length > 0) {
+                starDefault[j].addEventListener('click', function() {
+                  if (starStatus === 'default') {
+                    starStatus = "favorited"
+                    starDefault[j].src = 'starLiked.png';
+                    axios.post('/user_favorites', {
+                      artifact: {
+                        object_id: artifact.objectId,
+                        name: artifact.name,
+                        description: artifact.description,
+                        image: artifact.img
+                      }
+                    })
+                    bulmaToast.toast({
+                      message: 'Artifact has been added to your favorites!',
+                      type: 'is-success',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  } else {
+                    starDefault[j].src = 'unfavorite.png'
+                    starStatus = "default"
+                    axios.delete(`/user_favorites/${artifact.objectId}`)
+                    bulmaToast.toast({
+                      message: 'Artifact has been removed from your favorites',
+                      type: 'is-danger',
+                      duration: 2000,
+                      dismissible: true
+                    })
+                  }
+                })
+              }
+            }
+          })
+        document.querySelector('.displaySection').innerText = "We found the following for " + searchBarMobile.value + ':'
+      }
+    }
+  })
+
 
 })
