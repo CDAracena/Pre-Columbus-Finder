@@ -82,7 +82,7 @@ $(document).ready(function() {
               mainContainer.appendChild(artifactContainerDiv)
               let modalOpeners = document.querySelectorAll('.cardMainImg');
               modalOpeners[j].addEventListener('click', function() {
-                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modal').style.display = "flex"
                 document.querySelector('.modalImg').src = artifact.img
               })
               let starDefault = document.querySelectorAll('.stardefault');
@@ -138,7 +138,7 @@ $(document).ready(function() {
               mainContainer.appendChild(artifactContainerDiv)
               let modalOpeners = document.querySelectorAll('.cardMainImg');
               modalOpeners[j].addEventListener('click', function() {
-                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modal').style.display = "flex"
                 document.querySelector('.modalImg').src = artifact.img
               })
               let starDefault = document.querySelectorAll('.stardefault');
@@ -190,7 +190,7 @@ $(document).ready(function() {
               mainContainer.appendChild(artifactContainerDiv)
               let modalOpeners = document.querySelectorAll('.cardMainImg');
               modalOpeners[j].addEventListener('click', function() {
-                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modal').style.display = "flex"
                 document.querySelector('.modalImg').src = artifact.img
               })
               let starDefault = document.querySelectorAll('.stardefault');
@@ -327,7 +327,7 @@ $(document).ready(function() {
               mainContainer.appendChild(artifactContainerDiv)
               let modalOpeners = document.querySelectorAll('.cardMainImg');
               modalOpeners[j].addEventListener('click', function() {
-                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modal').style.display = "flex"
                 document.querySelector('.modalImg').src = artifact.img
               })
               let starDefault = document.querySelectorAll('.stardefault');
@@ -408,7 +408,7 @@ $(document).ready(function() {
               mainContainer.appendChild(artifactContainerDiv)
               let modalOpeners = document.querySelectorAll('.cardMainImg');
               modalOpeners[j].addEventListener('click', function() {
-                document.querySelector('.modal').style.display = "block"
+                document.querySelector('.modal').style.display = "flex"
                 document.querySelector('.modalImg').src = artifact.img
               })
               let starDefault = document.querySelectorAll('.stardefault');
