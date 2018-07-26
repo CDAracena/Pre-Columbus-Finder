@@ -15,7 +15,7 @@
     <nav class="navbar navBackground" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <div class="navbar-start">
-          <div class="navbar-item is-hidden-mobile">
+          <div class="navbar-item">
             <%=link_to 'Pre Columbus Finder', root_path, class:'userSessionLinks mainLogoText' %>
 
             <%= link_to root_path do %>
@@ -23,7 +23,7 @@
           <% end %>
         </div>
         <% if user_signed_in? %>
-          <div class="navbar-item">
+          <div class="navbar-item profileMobile">
             <%= link_to "My Profile", users_path, class:'userSessionLinks' %>
           </div>
           <div class="navbar-item logOutMobile">
@@ -31,10 +31,10 @@
           </div>
         </div>
       <% else %>
-        <div class="navbar-item is-hidden-mobile">
+        <div class="navbar-item signIN">
           <%=link_to 'Sign In', new_user_session_path, class:'userSessionLinks' %>
         </div>
-        <div class="navbar-item is-hidden-mobile">
+        <div class="navbar-item signUp">
           <%= link_to 'Sign Up', new_user_registration_path, class:'userSessionLinks' %>
         </div>
       <% end %>

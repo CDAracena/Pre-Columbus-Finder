@@ -135,9 +135,37 @@ a.userSessionLinks:hover {
 
 .navbar-burger {
   color: #ea5359;
-  position: inherit;
+  position: absolute;
+
+top: 60px;
+left: 40%;
+font-size: 23px;
 }
+
+.navbar-burger:hover{
+  box-shadow: 1px 1px 1px lightgrey;
+    border-radius: 3px;
+    background-color: rgb(234, 83, 89)
+}
+
+.navbar-item{
+  justify-content:center;
+}
+
+
+
 @media screen and (max-width: 400px) {
+  .signIN{
+    justify-content:left;
+  }
+  .modal{
+    justify-content: center;
+
+  }
+
+  .modalImg{
+    animation:unset;
+  }
   .sideMenuContainer {
     display: none;
     margin-top: 0;
@@ -183,8 +211,9 @@ a.userSessionLinks:hover {
 
   .logOutMobile {
     position: absolute;
-    top: 0;
-    left: 250px;
+    left: 67%;
+    width: 120px;
+    bottom: 1px;
   }
 
   .navBackground {
@@ -198,6 +227,15 @@ a.userSessionLinks:hover {
     position: absolute;
     left: 135px;
   }
+  .signUp{
+    position:absolute;
+    top: 60px;
+    left: 75%;
+  }
+  .profileMobile{
+    justify-content: left;
+  }
+
 }
 @keyframes mobileSideMenu {
   0% {

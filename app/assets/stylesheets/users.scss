@@ -112,3 +112,9 @@
   background-color: #f5f7f8;
   color: #ea5359;
 }
+
+@media screen and (max-width: 400px){
+  .mainUserContainer{
+    padding: 15px;
+  }
+}
